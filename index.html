@@ -167,7 +167,7 @@
             }
             var disp_gain = "Gain="+gain;
             var vout_gain = "Vout="+vout+" (mV)";
-            if(vout*1000>vcc)
+            if(vout>vcc*1000)
                 document.getElementById('result2').innerHTML='Conclusion : Here Vout>Vcc, hence the op-amp is satured';
             else
                 document.getElementById('result2').innerHTML='';
@@ -198,7 +198,7 @@
             }
             var disp_gain = "Gain="+gain;
             var vout_gain = "Vout="+vout+" (mV)";
-            if(vout*1000>vcc)
+            if(vout>vcc*1000)
                 document.getElementById('result1211').innerHTML='Conclusion : Here Vout>Vcc, hence the op-amp is satured';
             else
                 document.getElementById('result1211').innerHTML='';
