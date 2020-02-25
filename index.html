@@ -167,9 +167,9 @@
             }
             var disp_gain = "Gain="+gain;
             var vout_gain = "Vout="+vout+" (mV)";
-            if(vout>vcc*1000)
+            if(Math.abs(vout)>vcc*1000)
                 document.getElementById('result2').innerHTML='Conclusion : Here Vout>Vcc, hence the op-amp is saturated.';
-            else if(vcc*1000>vout)
+            else if(vcc*1000>Math.abs(vout))
                 document.getElementById('result2').innerHTML='Conclusion : Here Vcc>Vout, hence the op-amp is in linear region.';
             else
                 document.getElementById('result2').innerHTML='';
@@ -200,9 +200,9 @@
             }
             var disp_gain = "Gain="+gain;
             var vout_gain = "Vout="+vout+" (mV)";
-            if(vout>vcc*1000)
+            if(Math.abs(vout)>vcc*1000)
                 document.getElementById('result1211').innerHTML='Conclusion : Here Vout>Vcc, hence the op-amp is saturated.';
-            else if(vcc*1000>vcc)
+            else if(vcc*1000>Math.abs(vout))
                 document.getElementById('result1211').innerHTML='Conclusion : Here Vcc>Vout, hence the op-amp is in linear region.';
             else
                 document.getElementById('result1211').innerHTML='';
