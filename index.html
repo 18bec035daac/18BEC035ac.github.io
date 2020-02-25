@@ -31,7 +31,7 @@
         </div>
         <div class="row mt-4">
             <div class="col-12 col-md-3">
-                <input type="number" class="form-control my-2" placeholder="Enter Vin (mV)" onkeyup="check()" onclick="check()" id="vin">
+                <input type="number" class="form-control my-2" placeholder="Enter Vin (V)" onkeyup="check()" onclick="check()" id="vin">
             </div>
             <div class="col-12 col-md-3">
                 <input type="number" class="form-control my-2" placeholder="Enter Rf (kΩ)" onkeyup="check()" onclick="check()" id="rf">
@@ -61,7 +61,7 @@
         </div>
         <div class="row mt-4">
             <div class="col-12 col-md-3">
-                <input type="number" class="form-control my-2" placeholder="Enter Vin (mV)" onkeyup="check1()" onclick="check1()" id="vin1">
+                <input type="number" class="form-control my-2" placeholder="Enter Vin (V)" onkeyup="check1()" onclick="check1()" id="vin1">
             </div>
             <div class="col-12 col-md-3">
                 <input type="number" class="form-control my-2" placeholder="Enter Rf (kΩ)" onkeyup="check1()" onclick="check1()" id="rf1">
@@ -166,11 +166,11 @@
                 vout = (gain*vin);
             }
             var disp_gain = "Gain="+gain;
-            var vout_gain = "Vout="+vout+" (mV)";
-            if(Math.abs(vout)>vcc*1000)
-                document.getElementById('result2').innerHTML='Conclusion : Here Vout>Vcc, hence the op-amp is saturated.';
-            else if(vcc*1000>Math.abs(vout))
-                document.getElementById('result2').innerHTML='Conclusion : Here Vcc>Vout, hence the op-amp is in linear region.';
+            var vout_gain = "Vout="+vout+" (V)";
+            if(Math.abs(vout)>vcc)
+                document.getElementById('result2').innerHTML='Conclusion : Here |Vout|>Vcc, hence the op-amp is saturated.';
+            else if(vcc>Math.abs(vout))
+                document.getElementById('result2').innerHTML='Conclusion : Here Vcc>|Vout|, hence the op-amp is in linear region.';
             else
                 document.getElementById('result2').innerHTML='';
             document.getElementById('result').innerHTML=disp_gain;
@@ -199,11 +199,11 @@
                 vout = (gain*vin1);
             }
             var disp_gain = "Gain="+gain;
-            var vout_gain = "Vout="+vout+" (mV)";
-            if(Math.abs(vout)>vcc*1000)
-                document.getElementById('result1211').innerHTML='Conclusion : Here Vout>Vcc, hence the op-amp is saturated.';
-            else if(vcc*1000>Math.abs(vout))
-                document.getElementById('result1211').innerHTML='Conclusion : Here Vcc>Vout, hence the op-amp is in linear region.';
+            var vout_gain = "Vout="+vout+" (V)";
+            if(Math.abs(vout)>vcc)
+                document.getElementById('result1211').innerHTML='Conclusion : Here |Vout|>Vcc, hence the op-amp is saturated.';
+            else if(vcc>Math.abs(vout))
+                document.getElementById('result1211').innerHTML='Conclusion : Here Vcc>|Vout|, hence the op-amp is in linear region.';
             else
                 document.getElementById('result1211').innerHTML='';
             document.getElementById('result12').innerHTML=disp_gain;
