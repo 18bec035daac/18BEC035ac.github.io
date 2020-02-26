@@ -163,7 +163,7 @@
             var gain,vout,vcc;
             if(vin != '' && rf!='' && r1 != '' && vcc != ''){
                 gain = -(rf/r1);
-                vout = (gain*vin/1000);
+                vout = (gain*vin);
             }
             var disp_gain = "Gain="+gain;
             var vout_gain = "Vout="+vout+" (V)";
@@ -196,7 +196,7 @@
             var gain,vout,vcc;
             if(vin1 != '' && rf1!='' && r11 != '' && vcc != ''){
                 gain = 1+(rf1/r11);
-                vout = (gain*vin1/1000);
+                vout = (gain*vin);
             }
             var disp_gain = "Gain="+gain;
             var vout_gain = "Vout="+vout+" (V)";
